@@ -1,0 +1,98 @@
+.display-dropdown {
+    position: relative;
+}
+
+.display-dropdown .dropdown-label-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 2rem;
+    padding: 0.25rem 0.5rem;
+    box-shadow: 0 0 0.25rem #12121242;
+    background-color: #fff; /* Light mode background */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.display-dropdown .dropdown-label-container:hover {
+    transform: scale(1.02); /* Scale effect on hover */
+}
+
+.display-dropdown.dark-mode .dropdown-label-container {
+    background-color: #2c2c2c; /* Dark mode background */
+    box-shadow: 0 0 0.25rem rgba(255, 255, 255, 0.2);
+}
+
+.display-dropdown .dropdown-label {
+    color: #282a2f; /* Light mode text color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.display-dropdown.dark-mode .dropdown-label {
+    color: #e0e0e0; /* Dark mode text color */
+}
+
+.display-dropdown .dropdown-content-container {
+    position: absolute;
+    top: 2.5rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 2.5rem;
+    background-color: #f8f9fb;
+    box-shadow: 0 0 0.125rem #0007;
+    width: 30%;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    opacity: 0; /* Start invisible */
+    transform: translateY(-20px); /* Start higher for the falling effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    pointer-events: none; /* Prevent interaction when not visible */
+}
+
+.display-dropdown .dropdown-content-container.visible {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move down into place */
+    pointer-events: auto; /* Enable interaction */
+}
+
+.display-dropdown.dark-mode .dropdown-content-container {
+    background-color: #1c1c1c; /* Dark mode dropdown background */
+}
+
+.display-dropdown .dropdown-content-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.display-dropdown .dropdown-content-label {
+    color: #8a8b8c; /* Light mode text color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.display-dropdown.dark-mode .dropdown-content-label {
+    color: #c0c0c0; /* Dark mode text color */
+}
+
+.display-dropdown select {
+    background-color: #fefffe; /* Light mode select background */
+    outline: none;
+    border: 2px solid #d8d8d8;
+    border-radius: 2rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+.display-dropdown select:hover {
+    border-color: #6a0dad; /* Highlight border on hover */
+}
+
+.display-dropdown.dark-mode select {
+    background-color: #333; /* Dark mode select background */
+    color: #fff; /* Dark mode select text color */
+    border: 1px solid #555; /* Dark mode select border */
+}

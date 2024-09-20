@@ -1,0 +1,24 @@
+.grid {
+    min-height: calc(100vh - 60px); /* Header height: 60px */
+    background-color: #f4f5f8; /* Light mode background */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    padding: 1rem 2rem;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.grid.dark-mode {
+    background-color: #1C1C1C; /* Dark mode background */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 700px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid.dark-mode {
+        /* Adjustments for dark mode on smaller screens, if needed */
+        padding: 1rem; /* Optional: reduce padding */
+    }
+}

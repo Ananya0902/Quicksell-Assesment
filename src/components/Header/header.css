@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    border-radius: 0.5rem;
+    background-color: #fff; /* Light mode background */
+    color: #282a2f; /* Light mode text color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    box-shadow: 0 0 1rem rgba(5, 0, 10, 0.9), inset 0 0 0.5rem rgba(0, 0, 0, 0.4); /* Stronger glowing effect */
+}
+
+header.dark-mode {
+    background-color: #000000; /* Dark mode background */
+    color: #f0f0f0; /* Dark mode text color */
+    box-shadow: 0 0 1rem rgba(244, 241, 247, 0.9), inset 0 0 0.5rem rgba(0, 0, 0, 0.4); /* Stronger glowing effect */
+}
+

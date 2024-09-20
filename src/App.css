@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+.error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    text-align: center;
+    color: #d9534f; /* Error color */
+}
+
+.error-message .emoji {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.error-message h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.error-message p {
+    font-size: 1.25rem;
+}

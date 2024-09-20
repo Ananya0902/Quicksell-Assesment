@@ -1,0 +1,129 @@
+.card {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    margin: 1rem; /* Add margin for spacing between cards */
+    box-shadow: 0 0 1rem #12121221, inset 0 0 1rem rgba(0, 0, 0, 0.1); /* Outer and inner box shadows */
+    background-color: #fff; /* Light mode background */
+    transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out; /* Smooth transition for both transform and box-shadow */
+    transform-style: preserve-3d;
+    perspective: 1000px; /* Perspective for 3D effect */
+    backface-visibility: hidden; /* Ensure back of the card is not visible */
+    transform-origin: center; /* Set the origin for the transform */
+}
+
+.card.dark-mode {
+    background-color: #6A0DAD; /* Dark mode background */
+    color: #efffff; /* Default text color for dark mode */
+    box-shadow: 0 0 0.3rem rgba(138, 43, 226, 0.7), inset 0 0 0.3rem rgba(0, 0, 0, 0.2); /* Glowing effect with outer shadow */
+}
+
+.card:hover {
+    transform: scale(1.05) rotateY(90deg); /* Slightly increase the card size and rotate */
+    transition: transform 0.7s ease, box-shadow 0.4s ease; /* Smooth transitions */
+    box-shadow: 0 0 3rem #12121221, inset 0 0 1rem rgba(0, 0, 0, 0.1); /* Stronger glowing effect */
+}
+
+
+.card.dark-mode:hover {
+    transform: scale(1.05) rotateY(90deg); /* Slightly increase the card size and rotate */
+    transition: transform 0.7s ease-in-out, box-shadow 0.4s ease; /* Smooth transitions */
+    box-shadow: 0 0 1rem rgba(138, 43, 226, 0.9), inset 0 0 0.5rem rgba(0, 0, 0, 0.4); /* Stronger glowing effect */
+}
+
+
+
+
+.card .ticket-id {
+    color: #6b6f76;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.card.dark-mode .ticket-id {
+    color: #b0b0b0; /* Dark mode ticket id color */
+}
+
+.card .title {
+    color: #282a2f;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.card.dark-mode .title {
+    color: #e0e0e0; /* Dark mode title color */
+}
+
+.card .middle-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.card .bottom-container {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.card .tag-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #edeff2;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.card.dark-mode .tag-container {
+    border: 1px solid #444; /* Dark mode border color */
+}
+
+.card .tag-icon {
+    background-color: #bec2c8;
+    border-radius: 9999px;
+    height: 0.75rem;
+    width: 0.75rem;
+}
+
+.card.dark-mode .tag-icon {
+    background-color: #6b6b6b; /* Dark mode tag icon color */
+}
+
+.card .tag-text {
+    color: #6b6f76;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.card.dark-mode .tag-text {
+    color: #b0b0b0; /* Dark mode tag text color */
+}
+
+.card .top-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card .more-icon-container {
+    display: grid;
+    place-items: center;
+    border: 1px solid #edeff2;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.card svg {
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .card {
+        min-width: fit-content;
+    }
+}
