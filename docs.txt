@@ -1,0 +1,251 @@
+ Project Documentation: React Application
+
+This documentation outlines the components, utilities, and structure of the project. Each section explains what the component does, how it functions, and where it is located within the codebase.
+
+---
+
+  1. CustomCursor Component
+
+=> Description:  
+The `CustomCursor` component replaces the default mouse cursor with a custom one that reacts to user interactions. It features a trailing cursor effect and changes its appearance when hovering over certain interactive elements like links and buttons.
+
+ Functionality:
+- Tracks mouse movements to dynamically set the cursor position.
+- Implements a smooth trailing effect using `requestAnimationFrame`.
+- Changes cursor appearance when hovering over elements (`<a>`, `<button>`, etc.).
+  
+ Key Functions:
+- `handleMouseMove(e: MouseEvent)`: Updates the cursor's position on mouse move.
+- `trailCursor()`: Implements the trailing effect by interpolating the cursor’s position towards the mouse.
+- `handleMouseEnter()` and `handleMouseLeave()`: Detects when the cursor hovers over interactive elements.
+
+ File Location:  
+`src/components/CustomCursor/CustomCursor.tsx`
+
+ Styles:  
+`src/components/CustomCursor/CustomCursor.css`
+
+ Usage Example:
+```jsx
+<CustomCursor />
+```
+
+---
+
+ 2. Grid Component
+
+ Description:  
+The `Grid` component is responsible for creating a flexible grid layout, typically used for displaying multiple elements in a structured format.
+
+ Functionality:
+- Arranges child components in a grid structure, making it responsive based on the screen size.
+- Provides flexibility for creating complex layouts such as galleries or card-based UIs.
+
+ Key Props:
+- `children`: The child elements to be displayed within the grid.
+
+ File Location:  
+`src/components/Grid/Grid.tsx`
+
+ Styles:  
+`src/components/Grid/Grid.css`
+
+ Usage Example:
+```jsx
+<Grid>
+  <Card />
+  <Card />
+  <Card />
+</Grid>
+```
+
+---
+
+ 3. Header Component
+
+ Description:  
+The `Header` component is the main navigation area at the top of the page. It typically contains the logo, navigation links, and other important actions such as a login button or theme toggle.
+
+ Functionality:
+- Renders site navigation elements.
+- May include dropdowns, user profile links, or other essential actions.
+
+ Key Props:
+- None.
+
+ File Location:  
+`src/components/Header/Header.tsx`
+
+ Styles:  
+`src/components/Header/Header.css`
+
+ Usage Example:
+```jsx
+<Header />
+```
+
+---
+
+ 4. Loader Component
+
+ Description:  
+The `Loader` component is a visual indicator used to show that content is loading. It typically appears while waiting for API responses or during page transitions.
+
+ Functionality:
+- Displays a spinning animation or progress indicator.
+- Often used in asynchronous data fetching.
+
+ Key Props:
+- None.
+
+ File Location:  
+`src/components/Loader/Loader.tsx`
+
+ Styles:  
+`src/components/Loader/Loader.css`
+
+ Usage Example:
+```jsx
+{loading ? <Loader /> : <Content />}
+```
+
+---
+
+ 5. Toggle Component
+
+ Description:  
+The `Toggle` component provides a switch UI for enabling/disabling features like dark mode or other user preferences.
+
+ Functionality:
+- Acts as a state toggle (e.g., turning dark mode on or off).
+- Uses internal or external state to manage its value.
+
+ Key Props:
+- `isChecked`: Determines if the toggle is active or not.
+- `onToggle`: A callback function triggered when the user changes the toggle’s state.
+
+ File Location:  
+`src/components/Toggle/Toggle.tsx`
+
+ Styles:  
+`src/components/Toggle/Toggle.css`
+
+ Usage Example:
+```jsx
+<Toggle isChecked={darkMode} onToggle={handleToggle} />
+```
+
+---
+
+ 6. UserIcon Component
+
+ Description:  
+The `UserIcon` component is used to display a user’s avatar, either as an image or an icon, usually in the header or in the profile section.
+
+ Functionality:
+- Displays a default or user-uploaded avatar image.
+- Can link to the user’s profile or provide a dropdown menu for user-specific actions.
+
+ Key Props:
+- `imageUrl`: The URL of the user's avatar image.
+
+ File Location:  
+`src/components/UserIcon/UserIcon.tsx`
+
+ Styles:  
+`src/components/UserIcon/UserIcon.css`
+
+ Usage Example:
+```jsx
+<UserIcon imageUrl={user.avatarUrl} />
+```
+
+---
+
+ 7. Utility Functions: helper.tsx
+
+ Description:  
+The `helper.tsx` file contains utility functions used to support various functionalities across the project.
+
+ Functions:
+- `getStatusIcon(status: string)`: Returns the corresponding icon for a given status (e.g., `open`, `closed`, etc.).
+- `getPriorityIcon(priority: string)`: Returns the corresponding icon for different priority levels (e.g., `high`, `low`, etc.).
+
+ File Location:  
+`src/utils/helper.tsx`
+
+ Usage Example:
+```ts
+import { getStatusIcon, getPriorityIcon } from 'src/utils/helper.tsx';
+
+const statusIcon = getStatusIcon('open');
+const priorityIcon = getPriorityIcon('high');
+```
+
+---
+
+ Project Configuration & Running Instructions
+
+ Prerequisites:
+- Docker
+- Node.js (if running locally without Docker)
+
+ How to Run Locally:
+
+1. Clone the Repository:
+   ```bash
+   git clone https://github.com/Ananya0902/Quicksell-Assesment.git
+   cd your-project-repo
+   ```
+
+2. Install Dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the Development Server:
+   ```bash
+   npm start
+   ```
+
+4. Build the Application:
+   ```bash
+   npm run build
+   ```
+
+ Docker Setup:
+
+1. Build Docker Image:
+   ```bash
+   docker build -t your-app-name .
+   ```
+
+2. Run Docker Container:
+   ```bash
+   docker run -it your-app-name
+   ```
+
+ Docker Ignore Configuration:
+Make sure your `.dockerignore` file includes unnecessary files and folders to reduce the image size:
+```
+node_modules
+npm-debug.log
+.git
+Dockerfile
+README.md
+```
+
+---
+
+ Repository Links
+
+- GitHub Repository:  
+  `https://github.com/Ananya0902/Quicksell-Assesment`
+  
+- Live Site (Hosted Link):  
+  `https://quicksell-ananya2802.netlify.app/`
+
+---
+```
+
+You can copy this entire block and save it as a `.txt` file for your project documentation.

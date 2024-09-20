@@ -1,0 +1,32 @@
+# Node modules
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build output
+build
+dist
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Git
+.git
+.gitignore
+
+# Dockerfile and docker-compose files (if you want to ignore them)
+Dockerfile
+docker-compose.yml
+
+# IDE and editor files
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# Other unwanted files
+*.md
+*.log
+*.tmp
